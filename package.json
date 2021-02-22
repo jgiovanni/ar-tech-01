@@ -1,0 +1,22 @@
+{
+  "name": "ar-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel index.html --https --port 8080",
+    "build": "npx parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jerez Bain",
+  "license": "MIT",
+  "dependencies": {
+    "aframe": "^1.2.0",
+    "aframe-event-set-component": "^5.0.0",
+    "aframe-look-at-component": "^1.0.0",
+    "ar.js": "https://github.com/AR-js-org/AR.js"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.4.1"
+  }
+}
