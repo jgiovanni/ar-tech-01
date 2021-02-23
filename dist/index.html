@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	<title>AR Technical Test</title>
+
+	<script src="/ar-tech-01.e31bb0bc.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+</head><body style="margin : 0px; overflow: hidden;">
+<a-scene embedded="" arjs="" renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector="" play-sounds="">
+
+	<a-assets>
+		<a-asset-item id="piranha" src="assets/models/piranha_plant/scene.gltf"></a-asset-item>
+		<a-asset-item id="cowboy" src="assets/models/Low_poly_Cowboy_Android.gltf"></a-asset-item>
+		<audio id="coin" src="/smb_coin.5c842ba3.wav" preload="auto" volume="0.75"></audio>
+
+	</a-assets>
+
+	<a-marker preset="hiro" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" raycaster="objects: a-box">
+		<a-entity id="3d-model" gltf-model="#piranha" position="0 0 0" scale="0.5 0.5 0.5" class="clickable" gesture-handler="">
+		</a-entity>
+	</a-marker>
+	<a-entity camera=""></a-entity>
+	<a-sound src="#coin" autoplay="false" position="0 0 0"></a-sound>
+</a-scene>
+</body>
+</html>
