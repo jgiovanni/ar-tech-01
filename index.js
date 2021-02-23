@@ -1,28 +1,15 @@
-// require('aframe');
-// require('aframe-event-set-component');
-// require('aframe-look-at-component');
+require('aframe');
 
-// require('./cursor.js');
-
-AFRAME.registerComponent('color-randomizer', {
+AFRAME.registerComponent('play-sounds', {
   init: function () {
-    let colors = ["red", "green", "blue", "black", "orange", "white"]
-    var el = this.el;
-    el.addEventListener('click', (e) => {
-      this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
+    this.el.addEventListener("markerFound", (e) => {
+      var entity = document.querySelector('[sound]');
+      entity.components.sound.playSound();
     });
-  }
-});
-
-AFRAME.registerComponent('cursor-listener', {
-  init: function () {
-    var lastIndex = -1;
-    var COLORS = ['red', 'green', 'blue'];
-    this.el.addEventListener('click', function (evt) {
-      console.log('item clicked')
-      lastIndex = (lastIndex + 1) % COLORS.length;
-      this.setAttribute('material', 'color', COLORS[lastIndex]);
-      console.log('I was clicked at: ', evt.detail.intersection.point);
+  
+    this.el.addEventListener("markerLost", (e) => {
+      // var entity = document.querySelector('[sound]');
+      // entity.components.sound.playSound();
     });
   }
 });
